@@ -1,128 +1,29 @@
-# Real-time-stock-forecasting
+📈 Project Description
 
-## Description
+End-to-End Stock Price Forecasting Pipeline is a production-structured, database-backed time-series machine learning system designed to predict future stock prices using both statistical and deep learning approaches.
 
-📌 Project Description (Technical Version)
+The project implements a complete ML lifecycle, beginning with automated historical market data ingestion from the Alpha Vantage API, followed by structured storage in a PostgreSQL database. The pipeline performs exploratory data analysis (EDA), feature preparation, and time-series validation before training forecasting models.
 
-This repository contains an end-to-end deep learning time-series forecasting system using a Multivariate Multi-Step LSTM architecture trained on 10 years of historical OHLC data for a specific stock symbol.
+Two modeling approaches are implemented:
 
-All historical market data was:
+1.ARIMA (AutoRegressive Integrated Moving Average) for statistical time-series forecasting
 
-• Programmatically retrieved using the Alpha Vantage API
+2.LSTM (Long Short-Term Memory) neural network for capturing nonlinear patterns and long-term temporal dependencies
 
-• Persisted in PostgreSQL
+The system supports iterative multi-step forecasting, enabling prediction of future stock prices without retraining the model. Trained models and preprocessing scalers are serialized for deployment-ready inference.
 
-• Engineered into rolling 60-day sequences
+Key Highlights:
 
-• Scaled using MinMax normalization
+1. API-driven data ingestion pipeline
 
-• The model predicts the next 10 future trading days of closing prices in a single forward pass, reducing recursive error accumulation.
+2. PostgreSQL database integration
 
-The system includes:
+3. Time-series preprocessing & visualization
 
-• Automated live daily data ingestion
+4. Statistical and deep learning model comparison
 
-• PostgreSQL-backed historical storage
+5. Model persistence for scalable deployment
 
-• Saved model and scaler persistence
+6. Modular, production-oriented architecture
 
-• Real-time multi-step inference pipeline
-
-This project reflects production-oriented ML engineering practices suitable for financial portfolio analytics and deployment scenarios.
-
-
-
-Designed for portfolio monitoring and production deployment.
-
-🚀 This system performs :-
-
-📥 Live daily stock data ingestion from Alpha Vantage
-
-🗄 PostgreSQL storage of historical OHLC data.
-
-🧠 LSTM-based next-day closing price prediction
-
-🔁 Automated daily execution
-
-📊 Real-time inference using the most recent 60 trading days
-
-The model captures temporal patterns in stock price movements using deep learning.
-
-
-📦 Tech Stack
-
-•  Python 3.x
-
-• TensorFlow / Keras
-
-• scikit-learn
- 
-• PostgreSQL
-
-• psycopg2
-
-• Alpha Vantage API
-
-• dotenv
-
-
-
-⚙️ Installation & Setup
-1️⃣ Clone Repository
-2️⃣ Create Virtual Environment
-3️⃣ Install Dependencies
-4️⃣ Configure Environment Variables
-
-
-The system will :-
-
-1.Fetch latest daily stock data
-
-2.Insert into PostgreSQL
-
-3.Retrieve last 60 days
-
-4.Predict next-day closing price
-
-🔄 Workflow
-
-- Fetch latest daily OHLC from Alpha Vantage
-
-- Insert or update record in PostgreSQL
-
-- Retrieve latest 60 trading days
-
-- Scale using saved MinMaxScaler
-
-- Reshape for LSTM
-
-- Predict next-day closing price
-
-- Output prediction
-
-Runs daily via:
-
-Infinite loop (24-hour sleep), or
-Cron job (recommended for production)
-
-
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-AKSHAY KUMAR DHAR
-
-Project Link: [https://github.com/username/real-time-stock-forecasting](https://github.com/username/real-time-stock-forecasting)
+7. This project demonstrates strong skills in data engineering, time-series analysis, deep learning, database management, and end-to-end machine learning system design.
